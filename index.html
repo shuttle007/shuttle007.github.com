@@ -1,83 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no">
 		<title></title>
-		<style>
-			* {
-				margin: 0;
-				padding: 0;
-			}
-			
-			li {
-				list-style: none;
-			}
-			
-			#clock {
-				width: 300px;
-				height: 300px;
-				border: 10px solid #000;
-				margin: 20px auto;
-				border-radius: 50%;
-				position: relative;
-			}
-			
-			li {
-				width: 3px;
-				height: 8px;
-				background: #000;
-				opacity: 0.5;
-				position: absolute;
-				left: 50%;
-				top: 0px;
-				margin-left: -2px;
-				transform-origin: center 150px;
-			}
-			#hours{width: 18px;height: 54px;background: #000;position:absolute;left:141px;top:100px; transform-origin: bottom;}
-			#minutes{width: 10px;height: 70px;background: #000;position:absolute;left:145px;top:80px; transform-origin: bottom;}
-			#seconds{width: 4px;height: 100px;background: #000;position:absolute;left:148px;top:50px; transform-origin: bottom;}
-			#arc{width: 30px;height: 30px;background: blue;position:absolute;left:50%;top:50%;border-radius: 50%;margin:-15px 0 0 -15px;}
-		</style>
+		<link rel="apple-touch-icon-precomposed" href="" />
+		<link rel="apple-touch-startup-image" href="" />
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/swiper.min.css">
 	</head>
 
 	<body>
-		<div id="clock">
-			<ul id="ul1">
+		<nav id="nav">
+			<ul class="navlist">
+				<li id="n_0">
+					<a href="index.html"><span class="active"></span></a>
+				</li>
+				<li id="n_1">
+					<a href="cart.html"><span></span></a>
+					<div class="cartnums" style="display:none">0</div>
+				</li>
+				<li id="n_2">
+					<a href="userinfo.html"><span></span></a>
+				</li>
+				<li id="n_3">
+					<a href="productlist.html"><span></span></a>
+				</li>
 			</ul>
-			<div id="hours"></div>
-			<div id="minutes"></div>
-			<div id="seconds"></div>
-			<div id="arc"></div>
-		</div>
-		<script type="text/javascript">
-			var oUl = document.getElementById('ul1');//获取节点
-			var hours = document.getElementById('hours');//获取时针元素
-			var minutes = document.getElementById('minutes');//获取分针元素
-			var seconds = document.getElementById('seconds');//获取秒针元素
-			for(var i=0;i<60;i++){//插入分针和时针格子
-				var oLi = document.createElement('li');
-				oLi.style.transform = "rotate("+(i*6)+"deg)";
-				if(i%5 == 0){
-					oLi.style.height = "24px";
-					oLi.style.opacity = "1";
-					oLi.style.width = "4px";
-				}
-				oUl.appendChild(oLi);
-			}
-			
-			run();
-			function run(){
-				var date = new Date();
-				var iH = date.getHours();//获取当前小时数
-				var iM = date.getMinutes();//获取当前分钟数
-				var iS = date.getSeconds();//获取当前秒数
-			hours.style.transform = 'rotate('+ (iH * 30+iM/2) + 'deg)'; //设置时针旋转角度
-			minutes.style.transform = 'rotate('+ (iM * 6) + 'deg)';//设置分针旋转角度
-			seconds.style.transform = 'rotate('+ (iS * 6) + 'deg)';//设置秒针旋转角度
-			}
-			setInterval(run,1000);//定时器每一秒钟执行一次run函数
-		</script>
+		</nav>
+		<section class="indexslider">
+			<div class="swiper-container" id="topSlider">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<a href="info.html"><img src="images/sliderbanner/1.jpg"></a>
+						<div class="topzhezhao">
+							<div class="leftslidecontent">
+								<p>微信价<span>500元</span></p>
+								<p>这里是简单地描述吧这里是简单地描述吧这里是简单地描述吧</p>
+							</div>
+							<a href="#">立即购买</a>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<a href="info.html"><img src="images/sliderbanner/2.jpg"></a>
+						<div class="topzhezhao">
+							<div class="leftslidecontent">
+								<p>微信价<span>600元</span></p>
+								<p>这里是简单地描述吧这里是简单地描述吧这里是简单地描述吧</p>
+							</div>
+							<a href="#">立即购买</a>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<a href="info.html"><img src="images/sliderbanner/3.jpg"></a>
+						<div class="topzhezhao">
+							<div class="leftslidecontent">
+								<p>微信价<span>50元</span></p>
+								<p>这里是简单地描述吧这里是简单地描述吧这里是简单地描述吧</p>
+							</div>
+							<a href="#">立即购买</a>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<a href="info.html"><img src="images/sliderbanner/4.jpg"></a>
+						<div class="topzhezhao">
+							<div class="leftslidecontent">
+								<p>微信价<span>1000元</span></p>
+								<p>这里是简单地描述吧这里是简单地描述吧这里是简单地描述吧</p>
+							</div>
+							<a href="#">立即购买</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="productul" id="productul">
+			<ul>
+				<li>
+					<a href="#">
+						<div class="triangle-topleft"></div>
+						<span class="shuxing" data_url="productinfo.html">专属</span>
+						<div class="leftimages fl"><canvas data-src="images/product/product1.png"></canvas></div>
+						<div class="productcontent fr">
+							<p class="ptitle pl20">日本Calbee卡乐比营养早餐麦片水果颗粒果仁谷物 原味800g</p>
+							<!--<p class="pdes pl10">简介这里简介这里简介这里简介这里简介这里简介这里简介这里简介介这里简介</p>-->
+							<p class="pprice pl20"><span class="green">￥59</span></p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="triangle-topleft rexiao"></div>
+						<span class="shuxing" data_url="productinfo.html">热销</span>
+						<div class="leftimages fl"><canvas data-src="images/product/product1.png"></canvas></div>
+						<div class="productcontent fr">
+							<p class="ptitle pl20">日本Calbee卡乐比营养早餐麦片水果颗粒果仁谷物 原味800g</p>
+							<!--<p class="pdes pl10">简介这里简介这里简介这里简介这里简介这里简介这里简介这里简介介这里简介</p>-->
+							<p class="pprice pl20"><span class="green">￥59</span></p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="triangle-topleft xiangou"></div>
+						<span class="shuxing" data_url="productinfo.html">限购</span>
+						<div class="leftimages fl"><canvas data-src="images/product/product1.png"></canvas></div>
+						<div class="productcontent fr">
+							<p class="ptitle pl20">日本Calbee卡乐比营养早餐麦片水果颗粒果仁谷物 原味800g</p>
+							<!--<p class="pdes pl10">简介这里简介这里简介这里简介这里简介这里简介这里简介这里简介介这里简介</p>-->
+							<p class="pprice pl20"><span class="green">￥59</span></p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="triangle-topleft xiangou"></div>
+						<span class="shuxing" data_url="productinfo.html">限购</span>
+						<div class="leftimages fl"><canvas data-src="images/product/product1.png"></canvas></div>
+						<div class="productcontent fr">
+							<p class="ptitle pl20">日本Calbee卡乐比营养早餐麦片水果颗粒果仁谷物 原味800g</p>
+							<!--<p class="pdes pl10">简介这里简介这里简介这里简介这里简介这里简介这里简介这里简介介这里简介</p>-->
+							<p class="pprice pl20"><span class="green">￥59</span></p>
+						</div>
+					</a>
+				</li>
+
+			</ul>
+		</section>
+		<script src="script/libs/require.js" data-main="script/views/enterjs/mainconfig"></script>
 	</body>
 
 </html>
